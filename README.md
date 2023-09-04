@@ -3,11 +3,17 @@ React-Python-API
 
 
 ## Brug 
+#### Server site:
 
-Server site
     mkdir flask-server
 
-Dette vil laver en ny mappe 
+Dette vil laver en ny mappe
 
-Client site 
+    cd flask-server
+    touch server.py
+
+#### Client site:
+
     npx create-react-app client --template typescript
+
+    
