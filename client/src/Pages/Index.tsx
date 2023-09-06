@@ -1,15 +1,27 @@
-import React from 'react'
-import { useFetch } from '../Hooks/useFetch'
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const Index = () => {
+  const [members, setMembers] = useState<string[]>([]);
 
-    const url = "http//loaclhost/5000"
-    const {loading, error, apiData} = useFetch(url);
+  useEffect(() => {
+    axios
+      .get("/members") 
+      .then((response) => {
+        setMembers(response.data.members);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
 
-    
   return (
-    <div>Index</div>
-  )
-}
+    <div>
+      {members.map((member, index) => (
+        <li key={index}>{member}</li>
+      ))}
+    </div>
+  );
+};
 
-export default Index
+export default Index;
