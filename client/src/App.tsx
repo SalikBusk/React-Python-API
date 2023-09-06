@@ -6,6 +6,7 @@ import {
   Outlet,
   RouterProvider
 } from 'react-router-dom'
+import Index from './Pages/Index';
 
 const Layout = () => {
   return(
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <div></div>,
+        element: <Index/>,
       }
     ],
   }
